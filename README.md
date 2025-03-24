@@ -20,6 +20,6 @@ A full-stack Patreon clone built with Next.js, Tailwind CSS, NextAuth, and Razor
 ## 🚀 How to Run Locally  
 ```sh
 git clone https://github.com/rutvik7111/Get-Me-Chai.git
-cd patreon-clone
+cd Get-Me-Chai
 npm install
 npm run dev
