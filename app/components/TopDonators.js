@@ -19,7 +19,7 @@ const TopDonators = ({ userId }) => {
                 setLoading(false)
             }
         })();
-    }, [status])
+    }, [status, session, userId])
 
     if (loading) {
         return (
