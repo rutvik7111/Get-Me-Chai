@@ -57,7 +57,7 @@ const successfulPayment = () => {
                 {/* Profile Button */}
                 <button
                     onClick={() => router.push(`/user/${userid}`)}
-                    className="mt-6 px-6 py-3 bg-green-700 text-white rounded-lg text-lg font-semibold hover:bg-green-600 transition shadow-lg"
+                    className="mt-6 px-6 py-3 bg-green-700 text-white rounded-lg text-lg font-semibold hover:bg-green-600 transition shadow-lg cursor-pointer"
                 >
                     Go to Profile
                 </button>
