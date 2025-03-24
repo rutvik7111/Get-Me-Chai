@@ -460,7 +460,7 @@ export default function ProfilePage({ params }) {
                                 Posts by {user.name}
                             </h2>
 
-                            {posts.length > 0 ? (
+                            {filteredPosts.length > 0 ? (
                                 <div className="grid gap-6 mt-6">
                                     {filteredPosts.map((post) => (
                                         <div
