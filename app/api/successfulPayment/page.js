@@ -4,7 +4,7 @@ import { useSearchParams } from 'next/navigation'
 import { useRouter } from 'next/navigation'
 import { toast } from 'react-toastify'
 
-const successfulPayment = () => {
+const SuccessfulPayment = () => {
     const [count, setCount] = useState(5)
     const [timeoutID, setTimeoutID] = useState(null)
     const searchParams = useSearchParams()
@@ -66,4 +66,4 @@ const successfulPayment = () => {
     )
 }
 
-export default successfulPayment
+export default SuccessfulPayment
