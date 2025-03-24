@@ -19,7 +19,7 @@ const TopDonators = ({ userId }) => {
                 setLoading(false)
             }
         })();
-    }, [status, session, userId])
+    }, [status])
 
     if (loading) {
         return (
@@ -52,7 +52,7 @@ const TopDonators = ({ userId }) => {
                                     <span className='absolute rounded-full left-3.5 font-semibold'>{index + 1}</span>
                                     <span className="font-semibold">{payment.name} </span>
                                     <span>says </span>
-                                    <span className='italic font-semibold' title={`${payment.message}`}>"{payment.message}" </span>
+                                    <span className='italic font-semibold' title={`${payment.message}`}>&quot;{payment.message}&quot; </span>
                                     <span>and donated </span>
                                     <span className={"text-[#ffc738] font-semibold " + `${notoSans.className}`}>
                                         ₹{payment.amount.toLocaleString("en-IN")}
