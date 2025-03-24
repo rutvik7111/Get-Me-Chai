@@ -20,13 +20,13 @@ export const authOptions = {
             let _user = await User.findOne({ userId: user.id })
             let _secret = await RazorpaySecret.findOne({ userId: user.id })
             if (!_user) {
-                user = await User.create({
+                await User.create({
                     name: user.name,
                     username: user.email.split("@")[0],
                     email: user.email,
                     razorpayId: "",
-                    profilePhoto: {},
-                    coverPhoto: {},
+                    profilePhoto: "/default-profile.jpg",
+                    coverPhoto: "/default-cover.jfif",
                     userId: user.id,
                 })
             }

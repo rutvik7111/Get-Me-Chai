@@ -12,5 +12,5 @@ export async function POST(request) {
 
     const payment = await Payments.findOneAndUpdate({ orderId: razorpay_order_id }, { success: true }, { new: true })
 
-    return NextResponse.redirect(`${process.env.NEXTAUTH_URL}/successfulPayment?userid=${userid}&username=${username}`)
+    return NextResponse.redirect(`${process.env.NEXTAUTH_URL}/SuccessfulPayment?userid=${userid}&username=${username}`)
 }

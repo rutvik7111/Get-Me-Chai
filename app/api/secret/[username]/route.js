@@ -7,6 +7,9 @@ mongoose.connect(process.env.MONGODB_URI)
 export async function GET(request, { params }) {
     const { username } = await params
     const { razorpaySecret: secret } = await RazorpaySecret.findOne({ userId: username })
+    if (secret === "") {
+        return NextResponse.json({ secret })
+    }
     const protectedSecret = { secret: "*************" + secret.slice(-4,) }
     return NextResponse.json(protectedSecret)
 }

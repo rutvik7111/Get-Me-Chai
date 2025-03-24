@@ -19,7 +19,7 @@ export default function ProfilePage({ params }) {
     const [editMode, setEditMode] = useState(false);
     const [formData, setFormData] = useState({});
     const [secretData, setSecretData] = useState("");
-    const [defaultSecretData, setDefaultSecretData] = useState(null)
+    const [defaultSecretData, setDefaultSecretData] = useState("razorpay secret is not ready")
     const [paymentFormData, setPaymentFormData] = useState({ amount: "", message: "" });
     const [editPost, setEditPost] = useState(false);
     const [loading, setloading] = useState(true)
@@ -365,7 +365,7 @@ export default function ProfilePage({ params }) {
                                                     className="bg-gray-700 p-2 rounded-md outline-none text-white w-1/2"
                                                 />
                                             ) : (
-                                                <span className="font-medium truncate">***************</span>
+                                                <span className="font-medium truncate">{secretData ? '***************' : "Not set"}</span>
                                             )}
                                         </div>
                                     </>
@@ -420,7 +420,7 @@ export default function ProfilePage({ params }) {
                                                 </button>
                                             </div>
                                         ) : (
-                                            <button onClick={handleEditClick} className="customButton flex items-center gap-1" disabled={!defaultSecretData}>
+                                            <button onClick={handleEditClick} className="customButton flex items-center gap-1" disabled={defaultSecretData === "razorpay secret is not ready"}>
                                                 <FaEdit />
                                                 <span>Edit Profile</span>
                                             </button>
