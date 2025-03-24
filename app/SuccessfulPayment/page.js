@@ -5,7 +5,7 @@ import Success from '../components/Success'
 const page = () => {
     return (
         <Suspense>
-            <Success />
+            rutvik
         </Suspense>
     )
 }
