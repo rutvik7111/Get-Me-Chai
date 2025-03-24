@@ -5,7 +5,7 @@ import RazorpaySecret from "../lib/models/RazorpaySecret"
 import mongoose from "mongoose"
 
 export default async function createOrder(amount, fromUser, toUser, message) {
-    mongoose.connect("mongodb://localhost:27017/getmechai")
+    mongoose.connect(process.env.MONGODB_URI)
     const secret = await RazorpaySecret.findOne({ userId: toUser.userId })
 
     var instance = new Razorpay({ key_id: toUser.razorpayId, key_secret: secret.razorpaySecret })

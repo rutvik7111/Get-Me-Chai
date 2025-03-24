@@ -16,7 +16,7 @@ export const authOptions = {
             return baseUrl; // Ensures redirection to the correct domain
         },
         async signIn({ user, account, profile, email, credentials }) {
-            mongoose.connect("mongodb://localhost:27017/getmechai")
+            mongoose.connect(process.env.MONGODB_URI)
             let _user = await User.findOne({ userId: user.id })
             let _secret = await RazorpaySecret.findOne({ userId: user.id })
             if (!_user) {
@@ -52,7 +52,7 @@ export const authOptions = {
             session.user.id = token.id
 
             if (session) {
-                mongoose.connect("mongodb://localhost:27017/getmechai")
+                mongoose.connect(process.env.MONGODB_URI)
                 let _user = await User.findOne({ userId: session.user.id })
                 session.user.subscriptions = _user.subscriptions
                 session.user.pageName = _user.name
