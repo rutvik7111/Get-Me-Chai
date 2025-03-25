@@ -194,9 +194,14 @@ export default function ProfilePage({ params }) {
                     "color": "#3399cc"
                 }
             };
-            var rzp1 = new Razorpay(options);
-            rzp1.open();
-            e.preventDefault();
+            try {
+                var rzp1 = new Razorpay(options);
+                rzp1.open();
+                e.preventDefault();
+            } catch (error) {
+                console.log("user page tryCatch error is", error);
+
+            }
         } else {
             console.log("error came from razorpay.js");
         }
