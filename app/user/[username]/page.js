@@ -14,6 +14,8 @@ import TopDonators from "@/app/components/TopDonators";
 import { toast } from "react-toastify";
 
 export default function ProfilePage({ params }) {
+    document.title = "Loading..."
+
     const { user, setUser, isUserProfile, setIsUserProfile, userSubs, setUserSubs, posts, setPosts, handleSubscription } = useContext(Context);
     const [filteredPosts, setFilteredPosts] = useState([])
     const [editMode, setEditMode] = useState(false);
