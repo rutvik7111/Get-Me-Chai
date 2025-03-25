@@ -2,7 +2,7 @@ import { NextResponse } from "next/server"
 import mongoose from "mongoose"
 import Payments from "@/app/lib/models/Payments"
 
-mongoose.connect(process.env.MONGODB_URI)
+await mongoose.connect(process.env.MONGODB_URI)
 
 export async function GET(request, { params }) {
     const { username } = await params
