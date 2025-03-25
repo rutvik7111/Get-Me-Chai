@@ -49,26 +49,23 @@ export const authOptions = {
             if (account) {
                 token.accessToken = account.access_token
                 token.id = profile.id
+                console.log("token", token);
+                console.log("profile", profile);
             }
             return token
         },
         async session({ session, token, user }) {
             // Send properties to the client, like an access_token and user id from a provider.
             session.accessToken = token.accessToken
-            if (account.provider === "google") {
-                session.user.id = user.id
-            } else {
-                session.user.id = token.id
-            }
-            console.log(session);
+            session.user.id = token.id
 
-            if (session) {
-                await mongoose.connect(process.env.MONGODB_URI)
-                let _user = await User.findOne({ userId: session.user.id })
-                session.user.subscriptions = _user.subscriptions
-                session.user.pageName = _user.name
-                session.user.profilePhoto = _user.profilePhoto
-            }
+            console.log("session", session);
+
+            await mongoose.connect(process.env.MONGODB_URI)
+            let _user = await User.findOne({ userId: session.user.id })
+            session.user.subscriptions = _user.subscriptions
+            session.user.pageName = _user.name
+            session.user.profilePhoto = _user.profilePhoto
 
             return session
         }
