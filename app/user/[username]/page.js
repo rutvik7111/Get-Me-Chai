@@ -14,8 +14,6 @@ import TopDonators from "@/app/components/TopDonators";
 import { toast } from "react-toastify";
 
 export default function ProfilePage({ params }) {
-    document.title = "Loading..."
-
     const { user, setUser, isUserProfile, setIsUserProfile, userSubs, setUserSubs, posts, setPosts, handleSubscription } = useContext(Context);
     const [filteredPosts, setFilteredPosts] = useState([])
     const [editMode, setEditMode] = useState(false);
@@ -51,6 +49,7 @@ export default function ProfilePage({ params }) {
 
                 if (!user.error) {
                     setUser(user)
+                    document.title = `${user.name} - Get Me Chai`
                     setFormData(user)
                     setPosts(posts_)
                     if (status === "authenticated" && user.userId == session?.user.id) {
@@ -85,8 +84,8 @@ export default function ProfilePage({ params }) {
     }, []);
 
     useEffect(() => {
-        document.title = user ? `${user.name} - Get Me Chai` : "Loading..."
-    }, [user])
+        document.title = "Loading..."
+    }, [])
 
     // manage members-only posts
     useEffect(() => {
