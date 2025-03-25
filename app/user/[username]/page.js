@@ -179,23 +179,27 @@ export default function ProfilePage({ params }) {
 
     const handlePaymentButton = async (e) => {
         const order = await createOrder(paymentFormData.amount * 100, session.user, user, paymentFormData.message);
-        var options = {
-            "key": user.razorpayId, // Enter the Key ID generated from the Dashboard
-            "name": "Give Me Chai", //your business name
-            "order_id": order.id, //This is a sample Order ID. Pass the `id` obtained in the response of Step 1
-            "callback_url": `/api/checkPayment?userid=${user.userId}&username=${user.name}`,
-            "prefill": { //We recommend using the prefill parameter to auto-fill customer's contact information especially their phone number
-                "name": "Gaurav Kumar", //your customer's name
-                "email": "gaurav.kumar@example.com",
-                "contact": "9000090000" //Provide the customer's phone number for better conversion rates 
-            },
-            "theme": {
-                "color": "#3399cc"
-            }
-        };
-        var rzp1 = new Razorpay(options);
-        rzp1.open();
-        e.preventDefault();
+        if (order) {
+            var options = {
+                "key": user.razorpayId, // Enter the Key ID generated from the Dashboard
+                "name": "Give Me Chai", //your business name
+                "order_id": order.id, //This is a sample Order ID. Pass the `id` obtained in the response of Step 1
+                "callback_url": `/api/checkPayment?userid=${user.userId}&username=${user.name}`,
+                "prefill": { //We recommend using the prefill parameter to auto-fill customer's contact information especially their phone number
+                    "name": "Gaurav Kumar", //your customer's name
+                    "email": "gaurav.kumar@example.com",
+                    "contact": "9000090000" //Provide the customer's phone number for better conversion rates 
+                },
+                "theme": {
+                    "color": "#3399cc"
+                }
+            };
+            var rzp1 = new Razorpay(options);
+            rzp1.open();
+            e.preventDefault();
+        } else {
+            console.log("error came from razorpay.js");
+        }
     }
 
     const handleDeleteComment = async (postId, commentId) => {
