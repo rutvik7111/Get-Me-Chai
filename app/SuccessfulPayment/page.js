@@ -12,3 +12,8 @@ const page = () => {
 }
 
 export default page
+
+export const metadata = {
+    title: "Success",
+    description: "successful payment page.",
+};

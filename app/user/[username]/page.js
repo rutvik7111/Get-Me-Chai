@@ -24,6 +24,7 @@ export default function ProfilePage({ params }) {
     const [editPost, setEditPost] = useState(false);
     const [loading, setloading] = useState(true)
     const { username } = use(params)
+    document.title = `${username} - Get Me Chai`
     const { data: session, status } = useSession()
     const [updatedTitle, setUpdatedTitle] = useState("")
     const [updatedContent, setUpdatedContent] = useState("")
