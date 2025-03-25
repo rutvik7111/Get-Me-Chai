@@ -38,6 +38,7 @@ const Navbar = () => {
                                     width={25}
                                     height={25}
                                     alt="Picture of the author"
+                                    unoptimized
                                 />
                                 <span className='truncate w-20 md:w-full'>{session.user.email}</span>
                             </div>
