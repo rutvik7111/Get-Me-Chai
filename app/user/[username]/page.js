@@ -442,7 +442,7 @@ export default function ProfilePage({ params }) {
                                     <div className="flex flex-col md:flex-row justify-center items-center gap-2 w-full">
                                         <input className="bg-white rounded-lg p-1.5 pl-2 text-black w-34" type="number" name="amount" id="amount" value={paymentFormData.amount} onChange={handlePaymentDataChange} placeholder="Enter amount" />
 
-                                        <input className="bg-white rounded-lg p-1.5 pl-2 text-black w-[95%] sm:w-96" type="text" name="message" id="message" value={paymentFormData.message} onChange={handlePaymentDataChange} placeholder="Enter message" />
+                                        <input className="bg-white rounded-lg p-1.5 pl-2 text-black w-[95%] sm:w-96" type="text" name="message" id="message" value={paymentFormData.message} onChange={handlePaymentDataChange} placeholder="Enter message(minimum 4 chars)" />
 
                                         <button className="customButton flex items-center gap-1" id="rzp-button1" onClick={handlePaymentButton} disabled={paymentFormData.amount <= 0 || paymentFormData.message.length < 5}>
                                             <RiMoneyRupeeCircleFill className="text-xl" />
