@@ -26,7 +26,7 @@ export const authOptions = {
                     email: user.email,
                     razorpayId: "",
                     profilePhoto: "/default-profile.jpg",
-                    coverPhoto: "/default-cover.jfif",
+                    coverPhoto: "/default-cover.jpg",
                     userId: user.id,
                 })
             }

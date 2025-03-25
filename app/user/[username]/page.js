@@ -261,7 +261,7 @@ export default function ProfilePage({ params }) {
                         {/* Cover Photo */}
                         < div className="relative max-h-[40vh] md:max-h-[45vh] -left-1/4 md:left-0 w-3/2 md:w-full overflow-hidden flex items-center justify-center">
                             <Image
-                                src={user.coverPhoto || "/default-cover.jfif"}
+                                src={user.coverPhoto || "/default-cover.jpg"}
                                 alt="Cover" width={500}
                                 height={500}
                                 className="w-full object-contain opacity-100"
