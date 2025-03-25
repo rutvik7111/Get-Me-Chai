@@ -12,7 +12,7 @@ const CreatePost = ({ userId }) => {
 
     const handleSubmit = async () => {
         if (!title.trim() || !content.trim()) {
-            alert("Title and content cannot be empty!");
+            toast("Title and content cannot be empty!");
             return;
         }
         const res = await fetch("/api/posts/" + userId, {
@@ -24,7 +24,8 @@ const CreatePost = ({ userId }) => {
         setPosts(data)
         setTitle("");
         setContent("");
-        toast("Post created successfully.")
+        setIsMembersOnly(false);
+        toast("Post created successfully.");
     };
 
     return (
