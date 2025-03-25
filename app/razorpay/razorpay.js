@@ -31,7 +31,6 @@ export default async function createOrder(amount, fromUser, toUser, message) {
         })
 
     } catch (error) {
-        console.log("the razorpay.js ERROR is", error);
         return false;
     }
     return order;
