@@ -30,8 +30,8 @@ export default async function createOrder(amount, fromUser, toUser, message) {
             message: message
         })
 
+        return order;
     } catch (error) {
         return false;
     }
-    return order;
 }
