@@ -21,7 +21,7 @@ export default async function createOrder(amount, fromUser, toUser, message) {
             }
         })
 
-        const payment = await Payments.create({
+        order && await Payments.create({
             orderId: order.id,
             amount: amount / 100,
             from_user: fromUser.id,
