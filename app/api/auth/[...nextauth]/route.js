@@ -57,13 +57,11 @@ export const authOptions = {
             session.accessToken = token.accessToken
             session.user.id = token.id
 
-            if (session) {
-                await mongoose.connect(process.env.MONGODB_URI)
-                let _user = await User.findOne({ userId: session.user.id })
-                session.user.subscriptions = _user.subscriptions
-                session.user.pageName = _user.name
-                session.user.profilePhoto = _user.profilePhoto
-            }
+            await mongoose.connect(process.env.MONGODB_URI)
+            let _user = await User.findOne({ userId: session.user.id })
+            session.user.subscriptions = _user.subscriptions
+            session.user.pageName = _user.name
+            session.user.profilePhoto = _user.profilePhoto
 
             return session
         }
