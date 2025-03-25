@@ -203,7 +203,7 @@ export default function ProfilePage({ params }) {
             var rzp1 = new Razorpay(options);
             rzp1.open();
         } else {
-            console.log("error came from razorpay.js");
+            toast("Please enter valid Razorpay ID and Secret.")
         }
     }
 
