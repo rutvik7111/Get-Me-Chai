@@ -26,7 +26,7 @@ export default async function createOrder(amount, fromUser, toUser, message) {
             amount: amount / 100,
             from_user: fromUser.id,
             to_user: toUser.userId,
-            name: fromUser.name,
+            name: fromUser.pageName,
             message: message
         })
 
