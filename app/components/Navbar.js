@@ -34,7 +34,7 @@ const Navbar = () => {
                         <div className='flex items-center gap-2 sm:gap-5'>
                             <div className='gap-2 hidden min-[550px]:flex'>
                                 <Image
-                                    src="https://avatars.githubusercontent.com/u/111427282?v=4"
+                                    src={session.user.image}
                                     width={25}
                                     height={25}
                                     alt="Picture of the author"
