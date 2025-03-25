@@ -685,8 +685,3 @@ export default function ProfilePage({ params }) {
         </div >
     );
 }
-
-export const metadata = {
-    title: "Loading..",
-    description: "This is a user's page.",
-};
