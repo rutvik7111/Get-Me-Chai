@@ -48,9 +48,13 @@ export const authOptions = {
             // Persist the OAuth access_token and or the user id to the token right after signin
             if (account) {
                 token.accessToken = account.access_token
-                token.id = profile.id
-                console.log("token", token);
-                console.log("profile", profile);
+                if (account.provider === "google") {
+                    token.id = profile.sub
+                } else {
+                    token.id = profile.id
+                }
+                // console.log("token", token);
+                // console.log("profile", profile);
             }
             return token
         },
