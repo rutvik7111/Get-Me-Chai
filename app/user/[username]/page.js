@@ -24,7 +24,6 @@ export default function ProfilePage({ params }) {
     const [editPost, setEditPost] = useState(false);
     const [loading, setloading] = useState(true)
     const { username } = use(params)
-    document.title = `${username} - Get Me Chai`
     const { data: session, status } = useSession()
     const [updatedTitle, setUpdatedTitle] = useState("")
     const [updatedContent, setUpdatedContent] = useState("")
@@ -82,6 +81,10 @@ export default function ProfilePage({ params }) {
         script.async = true;
         document.body.appendChild(script);
     }, []);
+
+    useEffect(() => {
+        document.title = user ? `${user.name} - Get Me Chai` : "Loading..."
+    }, [user])
 
     // manage members-only posts
     useEffect(() => {
@@ -682,3 +685,8 @@ export default function ProfilePage({ params }) {
         </div >
     );
 }
+
+export const metadata = {
+    title: "Loading..",
+    description: "This is a user's page.",
+};
