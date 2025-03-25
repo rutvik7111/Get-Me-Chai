@@ -58,10 +58,10 @@ export const authOptions = {
             session.user.id = token.id
 
             console.log(session);
-            
+
             if (session) {
                 await mongoose.connect(process.env.MONGODB_URI)
-                let _user = await User.findOne({ userId: session.user.id })
+                let _user = await User.findOne({ userId: user.id })
                 session.user.subscriptions = _user.subscriptions
                 session.user.pageName = _user.name
                 session.user.profilePhoto = _user.profilePhoto
