@@ -178,8 +178,10 @@ export default function ProfilePage({ params }) {
     }
 
     const handlePaymentButton = async (e) => {
+        e.preventDefault();
         const order = await createOrder(paymentFormData.amount * 100, session.user, user, paymentFormData.message);
         if (order) {
+            console.log("order true");
             var options = {
                 "key": user.razorpayId, // Enter the Key ID generated from the Dashboard
                 "name": "Give Me Chai", //your business name
@@ -197,7 +199,6 @@ export default function ProfilePage({ params }) {
             try {
                 var rzp1 = new Razorpay(options);
                 rzp1.open();
-                e.preventDefault();
             } catch (error) {
                 console.log("user page tryCatch error is", error);
 
