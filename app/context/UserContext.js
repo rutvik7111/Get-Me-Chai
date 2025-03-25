@@ -12,17 +12,17 @@ export default function ContextProvider({ children }) {
     const [userSecret, setUserSecret] = useState(null)
     const [posts, setPosts] = useState(null)
     const [isUserProfile, setIsUserProfile] = useState(null)
-    const [userSubs, setUserSubs] = useState(session?.user.subscriptions)
+    const [userSubs, setUserSubs] = useState(null)
 
     useEffect(() => {
-        if (status === "authenticated") {
+        if (status === "authenticated" && session) {
             setUserSubs(session.user.subscriptions);
         }
-    }, [status])
+    }, [status, session])
 
     useEffect(() => {
         (async function () {
-            if (status === "authenticated" && userSubs) {
+            if (userSubs) {
                 await fetch("/api/user/" + session.user.id, {
                     method: "POST",
                     headers: { "Content-Type": "application/json" },
