@@ -33,6 +33,7 @@ export const authOptions = {
                     profilePhoto: "/default-profile.jpg",
                     coverPhoto: "/default-cover.jpg",
                     userId: user.id,
+                    subscriptions: []
                 })
             }
             if (!_secret) {
