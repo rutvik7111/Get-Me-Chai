@@ -1,5 +1,8 @@
 # Get Me Chai ☕
-A full-stack Patreon clone built with Next.js, Tailwind CSS, NextAuth, and Razorpay.  
+A full-stack Patreon clone built with Next.js, Tailwind CSS, NextAuth, and Razorpay. 
+
+## Live Link
+- https://get-me-chai-indol.vercel.app/
 
 ## 🔥 Features  
 - 🔐 **Authentication** (GitHub Login via NextAuth)  
