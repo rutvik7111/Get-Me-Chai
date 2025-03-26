@@ -6,7 +6,8 @@ A full-stack Patreon clone built with Next.js, Tailwind CSS, NextAuth, and Razor
 
 ## 🔥 Features  
 - 🔐 **Authentication** (GitHub Login via NextAuth)  
-- 💰 **Subscription System** (Users can subscribe & donate using Razorpay)  
+- 💰 **Subscription System** (Users can subscribe to other user pages)
+- 💰 **Payment System** (users can donate using Razorpay(test mode)) 
 - 📝 **Post Management** (Create, edit, delete posts, choose public or members-only)  
 - 👤 **Profile Customization** (Cover Photo, Profile Pic, Razorpay ID)  
 - 💬 **Comments Feature** (Logged-in users can comment, page owners can delete)  
