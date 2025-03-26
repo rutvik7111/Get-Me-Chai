@@ -18,5 +18,5 @@ A full-stack Patreon clone built with Next.js, Tailwind CSS, NextAuth, and Razor
 ## 🛠️ Tech Stack  
 - **Frontend**: Next.js, Tailwind CSS, Framer Motion(for loading animation), Toastify  
 - **Backend**: Next.js API Routes, MongoDB, Mongoose  
-- **Authentication**: NextAuth (GitHub OAuth)  
+- **Authentication**: NextAuth (GitHub and Google OAuth)  
 - **Payments**: Razorpay (Test Mode)  
