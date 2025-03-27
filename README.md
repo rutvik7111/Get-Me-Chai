@@ -20,3 +20,8 @@ A full-stack Patreon clone built with Next.js, Tailwind CSS, NextAuth, and Razor
 - **Backend**: Next.js API Routes, MongoDB, Mongoose  
 - **Authentication**: NextAuth (GitHub and Google OAuth)  
 - **Payments**: Razorpay (Test Mode)  
+
+## 🚀 Deployment
+
+- **Frontend & Backend**: Deployed on **Vercel**
+- **Database**: Hosted on **MongoDB Atlas**
